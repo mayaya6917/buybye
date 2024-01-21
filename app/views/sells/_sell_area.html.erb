@@ -1,11 +1,19 @@
 <div class="contents row">
+  <%= link_to new_sell_path, class: 'your-css-class' do %>
+    投稿する
+  <% end %>
+
   <% @sells.each do |sell| %>
-    <div class="sell_post">
-      <p><%= "販売中" %>
-      <p><%= sell.item %></p>
-      <span class="name">
+    <div class="sell-post">
+      <div class="sell-status">
+        <%= sell.status.name %>
+      </div>
+      <div class="sell-item">
+        <%= sell.item %>
+      </div>
+      <div class="name">
         <%= sell.limit %>
-      </span>
+      </div>
     </div>
   <% end %>
 </div>
