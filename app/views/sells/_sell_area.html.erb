@@ -1,1 +1,11 @@
-<出品管理エリア>
+<div class="contents row">
+  <% @sells.each do |sell| %>
+    <div class="sell_post">
+      <p><%= "販売中" %>
+      <p><%= sell.item %></p>
+      <span class="name">
+        <%= sell.limit %>
+      </span>
+    </div>
+  <% end %>
+</div>
