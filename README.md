@@ -27,6 +27,48 @@
 
 ## データベース設計
 
+### users テーブル
+
+| Column             | Type    | Options            |
+| ------------------ | ------- | ------------------ |
+| nickname           | string  | null: false        |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false        |
+
+#### Association
+
+- has_many :sells
+- has_many :buys
+
+### sells テーブル
+
+| Column                        | Type   | Options     |
+| ----------------------------- | ------ | -----------
+| user                          | references | null false, foreign_key: true |
+| item                          | string  | null: false |
+| memo                          | text    |             |
+| status_id                     | integer | null: false |
+| price                         | integer |             |
+| wish                          | integer |             |
+| limit                         | date    | null: false |
+
+- belongs_to :user
+- has_one :buys
+- belongs_to :status
+
+### buys テーブル
+
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| user            | references | null: false, foreign_key: true |
+| item            | references | null: false, foreign_key: true |
+| commition       | integer    | null: false,                   |
+| postage         | integer    | null: false,                   |
+| memo            | text       |                                |
+
+- belongs_to :user
+- belongs_to :sell
+
 ## 画面遷移図
 
 ## 開発環境
