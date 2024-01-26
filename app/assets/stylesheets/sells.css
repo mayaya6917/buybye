@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+}
+.sell_area {
+  background-color: pink;
+  width: 50vw;
+  height: 100vh;
+}
+
+.buy_area{
+  background-color: yellow;
+  width: 50vw;
+}

@@ -72,3 +72,8 @@ group :test do
 end
 
 gem 'devise'
+gem 'ancestry'
+gem 'pry-rails'
+gem 'active_hash'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
