@@ -1,0 +1,15 @@
+<div class="contents row">
+  <div class="container">
+    <h3>編集する</h3>
+    <%= form_with(model: @sell) do |form| %>
+      <%= form.text_field :item, placeholder: "商品名" %>
+      <%= form.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      <%= form.text_field :price, placeholder: "出品価格" %>
+      <%= form.text_field :wish, placeholder: "最低希望価格" %>
+      <%= form.text_field :memo, placeholder: "メモ" %>
+      <%= form.date_field :limit, placeholder: "出品期限" %>
+      <%= form.file_field :image, id:"item-image" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  </div>
+</div>

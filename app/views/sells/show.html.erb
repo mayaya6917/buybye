@@ -2,22 +2,17 @@
   <%= link_to "投稿する", new_sell_path, class: 'your-css-class' %>
   <%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" %>
 
-  <% @sells.each do |sell| %>
     <div class="sell-post">
       <div class="sell-status">
-        <%= sell.status.name %>
+        <%= @sell.status.name %>
       </div>
       <div class="sell-item">
-        <%= link_to sell.item, sell_path(sell.id) %>
+        <%= link_to @sell.item, sell_path(@sell.id) %>
       </div>
       <div class="name">
-        <%= sell.limit %>
+        <%= @sell.limit %>
       </div>
-      <% if sell.user == current_user %>
-        <div class="delete-btn">
-          <%= link_to "削除", sell_path(sell), data: { turbo_method: :delete } %>
-        </div>
-      <% end %>
+      <div class ="edit-btn">
+        <%= link_to "編集する", edit_sell_path(@sell.id) %>
     </div>
-  <% end %>
 </div>
