@@ -1,0 +1,38 @@
+header.header01 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+div.logo {
+  width: 60px;
+  height: 30px;
+}
+
+nav.navitem{
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  z-index: 2;
+  background: #fff;
+  transition: 0.5s;
+}
+
+nav.nav ul.navitem {
+  display: flex;
+
+}
+
+nav.nav ul.navitem li.list {
+  padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
+  list-style-type: none;
+}
+
+
+
+
+
