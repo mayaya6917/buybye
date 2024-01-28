@@ -11,6 +11,28 @@
   </head>
 
   <body>
+    <header class = "header01">
+      <div class = "logo">Buybye</div>
+      <nav class = "nav">
+        <ul class = "navitem">
+          <% if user_signed_in? %>
+            <li class = "list">
+              <a href = "">出品登録</a>
+            </li>
+            <li class = "list">
+              <a href = "">売上管理</a>
+            </li>
+            <li class = "list">
+              <%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" %>
+            </li>
+          <% else %>
+            <li class = "list">
+              <a href = "">ログインする</a>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>

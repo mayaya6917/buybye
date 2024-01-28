@@ -1,4 +1,5 @@
 class SellsController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :new, :create]
   before_action :set_sell, only: [:edit, :update, :destroy]
 
   def index
